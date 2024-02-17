@@ -1,22 +1,9 @@
 import { FC } from "react";
-import { Layout, Menu, MenuProps, theme } from "antd";
+import { Layout, Menu, theme } from "antd";
 import { Outlet } from "react-router-dom";
+import { adminSidebarItems } from "../../routes/admin.routes";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-const items: MenuProps["items"] = [
-  { key: "1", label: "Dashboard" },
-  { key: "13", label: "Dashboard 2" },
-  { key: "14", label: "Dashboard 2" },
-  {
-    key: "15",
-    label: "Dashboard 3",
-    children: [
-      { key: "12", label: "Dashboard 2" },
-      { key: "11", label: "Dashboard 2" },
-    ],
-  },
-];
 
 const Mainlayout: FC = () => {
   const {
@@ -53,7 +40,7 @@ const Mainlayout: FC = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["4"]}
-          items={items}
+          items={adminSidebarItems}
         />
       </Sider>
       <Layout>
