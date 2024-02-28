@@ -1,9 +1,12 @@
 import Mainlayout from "./components/layout/Mainlayout";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 function App() {
   return (
     <>
-      <Mainlayout />
+      <ProtectedRoute>
+        <Mainlayout />
+      </ProtectedRoute>
     </>
   );
 }
