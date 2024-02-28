@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Layout, Menu, theme } from "antd";
+import { Layout, theme } from "antd";
 import { Outlet } from "react-router-dom";
-import { adminSidebarItems } from "../../routes/admin.routes";
+import Sidebar from "./Sidebar";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const Mainlayout: FC = () => {
   const {
@@ -12,37 +12,7 @@ const Mainlayout: FC = () => {
 
   return (
     <Layout style={{ height: "100vh" }}>
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
-      >
-        <div className="demo-logo-vertical">
-          <h2
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              padding: "10px 0",
-              height: "3rem",
-            }}
-          >
-            PH Uni
-          </h2>
-        </div>
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["4"]}
-          items={adminSidebarItems}
-        />
-      </Sider>
+      <Sidebar />
       <Layout>
         <Header style={{ padding: 0 }} />
         <Content style={{ margin: "24px 16px 0" }}>
